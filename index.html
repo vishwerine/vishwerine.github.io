@@ -314,6 +314,65 @@
             display: none;
         }
 
+        /* Education Section Styles */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-24);
+        }
+
+        .education-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-base);
+            padding: var(--space-24);
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+        }
+
+        .education-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+            border-color: var(--color-primary);
+        }
+
+        .education-card .degree {
+            color: var(--color-primary);
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: var(--space-8);
+        }
+
+        .education-card .institution {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--color-slate-900);
+            margin-bottom: var(--space-8);
+        }
+
+        .education-card .period {
+            color: var(--color-text-secondary);
+            font-size: 13px;
+            margin-bottom: var(--space-16);
+        }
+
+        .education-card .details {
+            color: var(--color-text-secondary);
+            font-size: 14px;
+            line-height: 1.6;
+            margin: var(--space-12) 0;
+        }
+
+        .education-card .highlights {
+            background: rgba(33, 128, 141, 0.05);
+            padding: var(--space-12);
+            border-left: 3px solid var(--color-primary);
+            border-radius: 4px;
+            margin-top: var(--space-12);
+            font-size: 13px;
+            color: var(--color-text-secondary);
+        }
+
         .timeline-item h3 {
             font-size: 18px;
             color: var(--color-slate-900);
@@ -495,6 +554,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#articles">Articles</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -664,6 +724,54 @@
         </div>
     </section>
 
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="degree">Doctor of Philosophy (PhD)</div>
+                    <div class="institution">University of Warwick</div>
+                    <div class="period">January 2016 - December 2019</div>
+                    <div class="details">
+                        <strong>Thesis:</strong> Neural Models for Stepwise Text Illustration
+                    </div>
+                    <div class="details">
+                        <strong>Research Areas:</strong> Natural Language Processing, Machine Learning, Deep Learning
+                    </div>
+                    <div class="details">
+                        <strong>Advisor:</strong> Prof Yulan He
+                    </div>
+                    <div class="highlights">
+                        ✓ Fully-funded PhD Scholarship from Department of Computer Science<br>
+                        ✓ Conducted cutting-edge research in NLP and sequence-to-sequence models<br>
+                        ✓ Published multiple papers in top-tier conferences (LREC, ECIR)
+                    </div>
+                </div>
+
+                <div class="education-card">
+                    <div class="degree">Bachelor of Technology (BTech)</div>
+                    <div class="institution">Indian Institute of Technology (IIT) Ropar</div>
+                    <div class="period">August 2011 - May 2015</div>
+                    <div class="details">
+                        <strong>Field:</strong> Computer Science and Engineering
+                    </div>
+                    <div class="details">
+                        <strong>CGPA:</strong> 7.35 / 10.0
+                    </div>
+                    <div class="details">
+                        <strong>Final Project:</strong> EBC Detection by Classifying Mammograms using SVM
+                    </div>
+                    <div class="highlights">
+                        ✓ Top 0.1% in AIEEE2011 exam (Rank 3,078 out of 1.12M)<br>
+                        ✓ Top 0.1% in IITJEE2011 exam (Rank 3,782 out of 550K)<br>
+                        ✓ Strong foundation in algorithms, ML, and software development
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Skills Section -->
     <section id="skills">
         <div class="container">
@@ -731,16 +839,27 @@
     <!-- Articles Section -->
     <section id="articles">
         <div class="container">
-            <h2>Research Articles & Publications</h2>
-            <p style="color: var(--color-text-secondary); margin-bottom: var(--space-24);">
-                I actively write about machine learning, NLP, and AI applications. New articles and research insights coming soon!
+            <h2>Articles</h2>
+            <p style="color: var(--color-text-secondary); margin-bottom: var(--space-24); font-size: 16px; line-height: 1.8;">
+                I share in-depth insights on machine learning, natural language processing, and AI engineering. 
+                These articles feature code examples, practical applications, and research findings from my work 
+                in academia and industry.
             </p>
             <div class="articles-placeholder">
                 <div class="icon">✍️</div>
-                <p>
-                    <strong>Coming Soon:</strong> I'm currently working on a series of in-depth articles covering 
-                    advanced NLP techniques, transformer architectures, multimodal learning, and practical ML engineering. 
-                    Articles will feature code examples, visualizations, and real-world applications.
+                <p style="margin-bottom: var(--space-16);">
+                    <strong>Featured Topics:</strong>
+                </p>
+                <p style="text-align: left; max-width: 600px; margin: 0 auto; color: var(--color-text-secondary);">
+                    • Advanced Transformer Architectures & Fine-tuning<br>
+                    • Multimodal Learning: Combining Vision and Language<br>
+                    • Production ML: Deploying Models with Django & PyTorch<br>
+                    • NLP for Healthcare: Text Mining Medical Records<br>
+                    • Deep Learning for Sequence-to-Sequence Tasks<br>
+                    • Attention Mechanisms in Neural Networks<br>
+                </p>
+                <p style="margin-top: var(--space-24); color: var(--color-text-secondary);">
+                    <strong>New articles coming soon!</strong> Check back regularly for fresh content, code tutorials, and research insights.
                 </p>
             </div>
         </div>
