@@ -1,938 +1,196 @@
+
+index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vishwash Batra - ML Engineer & NLP Specialist</title>
-    <style>
-        :root {
-            --color-white: rgba(255, 255, 255, 1);
-            --color-cream-50: rgba(252, 252, 249, 1);
-            --color-cream-100: rgba(255, 255, 253, 1);
-            --color-gray-300: rgba(167, 169, 169, 1);
-            --color-slate-500: rgba(98, 108, 113, 1);
-            --color-brown-600: rgba(94, 82, 64, 1);
-            --color-charcoal-700: rgba(31, 33, 33, 1);
-            --color-charcoal-800: rgba(38, 40, 40, 1);
-            --color-slate-900: rgba(19, 52, 59, 1);
-            --color-teal-300: rgba(50, 184, 198, 1);
-            --color-teal-400: rgba(45, 166, 178, 1);
-            --color-teal-500: rgba(33, 128, 141, 1);
-            --color-teal-600: rgba(29, 116, 128, 1);
-
-            --color-background: var(--color-cream-50);
-            --color-surface: var(--color-cream-100);
-            --color-text: var(--color-slate-900);
-            --color-text-secondary: var(--color-slate-500);
-            --color-primary: var(--color-teal-500);
-            --color-primary-hover: var(--color-teal-600);
-            --color-border: rgba(94, 82, 64, 0.2);
-            --color-btn-primary-text: var(--color-cream-50);
-
-            --font-family-base: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-family-mono: 'Courier New', monospace;
-            --space-8: 8px;
-            --space-12: 12px;
-            --space-16: 16px;
-            --space-20: 20px;
-            --space-24: 24px;
-            --space-32: 32px;
-            --radius-base: 8px;
-            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-family-base);
-            background: var(--color-background);
-            color: var(--color-text);
-            line-height: 1.6;
-        }
-
-        /* Navigation */
-        nav {
-            position: sticky;
-            top: 0;
-            background: var(--color-surface);
-            border-bottom: 1px solid var(--color-border);
-            z-index: 100;
-            box-shadow: var(--shadow-md);
-        }
-
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: var(--space-16);
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        nav .logo {
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--color-primary);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: var(--space-24);
-        }
-
-        nav a {
-            color: var(--color-text-secondary);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--color-primary);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 80px var(--space-16);
-            background: linear-gradient(135deg, rgba(33, 128, 141, 0.1) 0%, rgba(50, 184, 198, 0.05) 100%);
-            text-align: center;
-        }
-
-        .hero .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: var(--space-16);
-            color: var(--color-slate-900);
-        }
-
-        .hero .subtitle {
-            font-size: 24px;
-            color: var(--color-primary);
-            margin-bottom: var(--space-20);
-            font-weight: 600;
-        }
-
-        .hero p {
-            font-size: 16px;
-            color: var(--color-text-secondary);
-            max-width: 600px;
-            margin: 0 auto var(--space-32);
-            line-height: 1.8;
-        }
-
-        .hero .cta-buttons {
-            display: flex;
-            gap: var(--space-16);
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: var(--space-12) var(--space-24);
-            border-radius: var(--radius-base);
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-8);
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        .btn-primary {
-            background: var(--color-primary);
-            color: var(--color-btn-primary-text);
-        }
-
-        .btn-primary:hover {
-            background: var(--color-primary-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(33, 128, 141, 0.2);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--color-primary);
-            border: 2px solid var(--color-primary);
-        }
-
-        .btn-secondary:hover {
-            background: var(--color-primary);
-            color: var(--color-btn-primary-text);
-        }
-
-        /* Section Styles */
-        section {
-            padding: 60px var(--space-16);
-        }
-
-        section h2 {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: var(--space-32);
-            color: var(--color-slate-900);
-            border-bottom: 3px solid var(--color-primary);
-            padding-bottom: var(--space-16);
-            display: inline-block;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: var(--space-24);
-            margin-bottom: var(--space-32);
-        }
-
-        .project-card {
-            background: var(--color-surface);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-base);
-            padding: var(--space-24);
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-md);
-        }
-
-        .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-            border-color: var(--color-primary);
-        }
-
-        .project-card h3 {
-            font-size: 20px;
-            margin-bottom: var(--space-12);
-            color: var(--color-primary);
-        }
-
-        .project-card p {
-            color: var(--color-text-secondary);
-            margin-bottom: var(--space-16);
-            font-size: 14px;
-            line-height: 1.7;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--space-8);
-            margin-bottom: var(--space-16);
-        }
-
-        .tag {
-            background: rgba(33, 128, 141, 0.1);
-            color: var(--color-primary);
-            padding: var(--space-4) var(--space-12);
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .project-links {
-            display: flex;
-            gap: var(--space-12);
-            flex-wrap: wrap;
-        }
-
-        .project-links a {
-            flex: 1;
-            min-width: 120px;
-            text-align: center;
-            padding: var(--space-8) var(--space-12);
-            background: var(--color-primary);
-            color: var(--color-btn-primary-text);
-            text-decoration: none;
-            border-radius: var(--radius-base);
-            font-size: 13px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 2px solid var(--color-primary);
-        }
-
-        .project-links a:hover {
-            background: transparent;
-            color: var(--color-primary);
-        }
-
-        /* Experience Timeline */
-        .timeline {
-            position: relative;
-            padding-left: 40px;
-        }
-
-        .timeline-item {
-            margin-bottom: var(--space-32);
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -30px;
-            top: 0;
-            width: 16px;
-            height: 16px;
-            background: var(--color-primary);
-            border: 3px solid var(--color-surface);
-            border-radius: 50%;
-            box-shadow: inset 0 0 0 3px var(--color-background);
-        }
-
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            left: -22px;
-            top: 24px;
-            width: 2px;
-            height: 100%;
-            background: var(--color-border);
-        }
-
-        .timeline-item:last-child::after {
-            display: none;
-        }
-
-        /* Education Section Styles */
-        .education-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--space-24);
-        }
-
-        .education-card {
-            background: var(--color-surface);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-base);
-            padding: var(--space-24);
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-md);
-        }
-
-        .education-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-            border-color: var(--color-primary);
-        }
-
-        .education-card .degree {
-            color: var(--color-primary);
-            font-weight: 700;
-            font-size: 18px;
-            margin-bottom: var(--space-8);
-        }
-
-        .education-card .institution {
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--color-slate-900);
-            margin-bottom: var(--space-8);
-        }
-
-        .education-card .period {
-            color: var(--color-text-secondary);
-            font-size: 13px;
-            margin-bottom: var(--space-16);
-        }
-
-        .education-card .details {
-            color: var(--color-text-secondary);
-            font-size: 14px;
-            line-height: 1.6;
-            margin: var(--space-12) 0;
-        }
-
-        .education-card .highlights {
-            background: rgba(33, 128, 141, 0.05);
-            padding: var(--space-12);
-            border-left: 3px solid var(--color-primary);
-            border-radius: 4px;
-            margin-top: var(--space-12);
-            font-size: 13px;
-            color: var(--color-text-secondary);
-        }
-
-        .timeline-item h3 {
-            font-size: 18px;
-            color: var(--color-slate-900);
-            margin-bottom: var(--space-4);
-        }
-
-        .timeline-item .role {
-            color: var(--color-primary);
-            font-weight: 600;
-            font-size: 14px;
-            margin-bottom: var(--space-8);
-        }
-
-        .timeline-item .period {
-            color: var(--color-text-secondary);
-            font-size: 13px;
-            margin-bottom: var(--space-12);
-        }
-
-        .timeline-item p {
-            color: var(--color-text-secondary);
-            font-size: 14px;
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        /* Skills Section */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--space-24);
-        }
-
-        .skill-category {
-            background: var(--color-surface);
-            padding: var(--space-20);
-            border-radius: var(--radius-base);
-            border: 1px solid var(--color-border);
-        }
-
-        .skill-category h3 {
-            font-size: 18px;
-            color: var(--color-primary);
-            margin-bottom: var(--space-16);
-            border-bottom: 2px solid var(--color-primary);
-            padding-bottom: var(--space-8);
-        }
-
-        .skill-list {
-            list-style: none;
-        }
-
-        .skill-list li {
-            padding: var(--space-8) 0;
-            color: var(--color-text-secondary);
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-        }
-
-        .skill-list li::before {
-            content: '→';
-            color: var(--color-primary);
-            margin-right: var(--space-8);
-            font-weight: bold;
-        }
-
-        /* Articles Section */
-        .articles-placeholder {
-            background: rgba(33, 128, 141, 0.05);
-            border: 2px dashed var(--color-primary);
-            border-radius: var(--radius-base);
-            padding: var(--space-32);
-            text-align: center;
-            margin-top: var(--space-24);
-        }
-
-        .articles-placeholder p {
-            color: var(--color-text-secondary);
-            font-size: 16px;
-            line-height: 1.8;
-        }
-
-        .articles-placeholder .icon {
-            font-size: 48px;
-            margin-bottom: var(--space-16);
-        }
-
-        /* Contact Section */
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--space-24);
-            margin-bottom: var(--space-32);
-        }
-
-        .contact-card {
-            background: var(--color-surface);
-            padding: var(--space-24);
-            border-radius: var(--radius-base);
-            border: 1px solid var(--color-border);
-            text-align: center;
-        }
-
-        .contact-card .label {
-            color: var(--color-text-secondary);
-            font-size: 13px;
-            text-transform: uppercase;
-            font-weight: 600;
-            margin-bottom: var(--space-8);
-        }
-
-        .contact-card a,
-        .contact-card p {
-            color: var(--color-primary);
-            font-size: 16px;
-            font-weight: 600;
-            text-decoration: none;
-            margin: 0;
-        }
-
-        .contact-card a:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--color-charcoal-700);
-            color: var(--color-white);
-            text-align: center;
-            padding: var(--space-32);
-            margin-top: 60px;
-        }
-
-        footer p {
-            margin: 0;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav ul {
-                gap: var(--space-12);
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero .subtitle {
-                font-size: 18px;
-            }
-
-            section h2 {
-                font-size: 28px;
-            }
-
-            .hero .cta-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                justify-content: center;
-                width: 100%;
-            }
-
-            nav ul {
-                display: none;
-            }
-        }
-    </style>
+    <title>Vishwash Batra - ML & NLP Specialist</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div class="logo">VB</div>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#articles">Articles</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="container navbar-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">Vishwash Batra</span>
+                    <span class="logo-badge">ML & NLP</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="pages/projects.html" class="nav-link">Projects</a>
+                <a href="pages/experience.html" class="nav-link">Experience</a>
+                <a href="pages/articles.html" class="nav-link">Articles</a>
+                <a href="pages/contact.html" class="nav-link">Contact</a>
+            </nav>
+            <button class="menu-toggle">☰</button>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="about">
+    <section class="hero">
         <div class="container">
-            <h1>Vishwash Batra</h1>
-            <div class="subtitle">Machine Learning Engineer & NLP Specialist</div>
-            <p>
-                PhD in Computer Science from University of Warwick with expertise in Neural Language Processing, 
-                Deep Learning, and Data Science. Lecturer at Keele University with proven track record of 
-                developing innovative AI/ML solutions for real-world problems. Fellow of the Higher Education Academy.
-            </p>
-            <div class="cta-buttons">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+            <div class="hero-content">
+                <h1 class="hero-title">Machine Learning & NLP Specialist</h1>
+                <p class="hero-subtitle">
+                    Lecturer at Keele University | PhD in Computer Science | Transforming Ideas into Production ML Systems
+                </p>
+                <div class="hero-cta">
+                    <a href="pages/projects.html" class="btn btn--primary btn--lg">View My Work</a>
+                    <a href="pages/contact.html" class="btn btn--outline btn--lg">Get in Touch</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">Research Projects</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Publications</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
+    <!-- About Section -->
+    <section class="about">
         <div class="container">
-            <h2>Featured Projects & Research</h2>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <h3>Neural Models for Stepwise Text Illustration</h3>
-                    <p>PhD research on neural sequence-to-sequence models for generating step-by-step visual explanations from text documents, combining natural language understanding with visual generation.</p>
-                    <div class="project-tags">
-                        <span class="tag">NLP</span>
-                        <span class="tag">Seq2Seq</span>
-                        <span class="tag">RNN</span>
-                        <span class="tag">Vision</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" title="Link to PhD Thesis">📄 Thesis</a>
-                        <a href="#" title="Link to GitHub Repository">💻 Code</a>
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a Lecturer in Computer Science at Keele University with a PhD from the University of Warwick, 
+                        specializing in Machine Learning and Natural Language Processing. My career spans cutting-edge research, 
+                        practical industry applications, and high-impact teaching.
+                    </p>
+                    <p>
+                        With expertise in deep learning, transformer architectures, and NLP systems, I bridge the gap between 
+                        academic research and real-world ML engineering. I've successfully delivered R&D projects with industry 
+                        partners and am passionate about building production-ready ML solutions.
+                    </p>
+                    <p>
+                        Currently, I'm exploring opportunities in the ML engineering and NLP specialist domains, focusing on 
+                        multimodal AI, GenAI applications, and scalable machine learning systems.
+                    </p>
+                </div>
+                <div class="about-highlight">
+                    <div class="highlight-box">
+                        <h3>Core Expertise</h3>
+                        <ul>
+                            <li>• Deep Learning & Neural Networks</li>
+                            <li>• Natural Language Processing</li>
+                            <li>• Transformer Architectures</li>
+                            <li>• Full-Stack ML Development</li>
+                            <li>• AWS & Cloud Deployment</li>
+                            <li>• Django & Python Backend</li>
+                        </ul>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Project 2 -->
+    <!-- Featured Projects Preview -->
+    <section class="featured-projects">
+        <div class="container">
+            <h2>Featured Research</h2>
+            <p class="section-subtitle">Explore a selection of my key ML and NLP projects</p>
+            
+            <div class="projects-grid">
                 <div class="project-card">
-                    <h3>Neural Caption Generation for News Images</h3>
-                    <p>Deep learning approach for automatic caption generation of news images using attention mechanisms. Published at LREC 2018 in Miyazaki, Japan.</p>
                     <div class="project-tags">
-                        <span class="tag">Image Captioning</span>
-                        <span class="tag">Attention</span>
+                        <span class="tag">NLP</span>
                         <span class="tag">Deep Learning</span>
                     </div>
+                    <h3>Neural Models for Stepwise Text Illustration</h3>
+                    <p>PhD thesis on neural approaches for generating step-by-step text illustrations using attention mechanisms and sequence-to-sequence models.</p>
                     <div class="project-links">
-                        <a href="#" title="Link to Paper">📄 Paper</a>
-                        <a href="#" title="Link to Code">💻 Code</a>
+                        <a href="#" class="link-btn">Paper</a>
+                        <a href="#" class="link-btn">Code</a>
                     </div>
                 </div>
 
-                <!-- Project 3 -->
                 <div class="project-card">
-                    <h3>Variational Recurrent Seq2Seq Retrieval</h3>
-                    <p>Advanced research on variational recurrent architectures for stepwise illustration retrieval. Presented at ECIR 2020 in Lisbon, combining latent variable models with sequence generation.</p>
                     <div class="project-tags">
-                        <span class="tag">VAE</span>
-                        <span class="tag">Seq2Seq</span>
-                        <span class="tag">RNN</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" title="Link to Paper">📄 Paper</a>
-                        <a href="#" title="Link to Code">💻 Code</a>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card">
-                    <h3>Food Safety News Classification</h3>
-                    <p>Hierarchical transformer model for classifying food safety news events. Published in Heliyon (2023). Applies advanced NLP techniques to healthcare and safety domain.</p>
-                    <div class="project-tags">
-                        <span class="tag">Transformers</span>
-                        <span class="tag">Healthcare</span>
-                        <span class="tag">Classification</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" title="Link to Paper">📄 Paper</a>
-                        <a href="#" title="Link to Code">💻 Code</a>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="project-card">
-                    <h3>Medication Intake Detection from Twitter</h3>
-                    <p>Domain attention-based RNN with multi-level features for detecting personal medication intake mentions in Twitter. Published in Computational Intelligence and Neuroscience (2022).</p>
-                    <div class="project-tags">
-                        <span class="tag">RNN</span>
-                        <span class="tag">Attention</span>
                         <span class="tag">NLP</span>
                         <span class="tag">Healthcare</span>
                     </div>
+                    <h3>Food Safety News Classification</h3>
+                    <p>Hierarchical transformer-based system for automated classification of food safety news articles with ERDF funding support.</p>
                     <div class="project-links">
-                        <a href="#" title="Link to Paper">📄 Paper</a>
-                        <a href="#" title="Link to Code">💻 Code</a>
+                        <a href="#" class="link-btn">Paper</a>
+                        <a href="#" class="link-btn">Code</a>
                     </div>
                 </div>
 
-                <!-- Project 6 -->
                 <div class="project-card">
-                    <h3>Fake News Detection - Multimodal Fusion</h3>
-                    <p>Trimoon: Two-round inconsistency-based multi-modal fusion network for fake news detection. Published in Information Fusion (2023). Combines text and image analysis.</p>
                     <div class="project-tags">
-                        <span class="tag">Multimodal</span>
-                        <span class="tag">Fake News</span>
-                        <span class="tag">Fusion</span>
+                        <span class="tag">ML</span>
+                        <span class="tag">Healthcare Tech</span>
                     </div>
+                    <h3>Apnea-Tech ML Solutions</h3>
+                    <p>Developed machine learning solutions for medical device optimization. ERDF-funded healthcare project with real-world deployment.</p>
                     <div class="project-links">
-                        <a href="#" title="Link to Paper">📄 Paper</a>
-                        <a href="#" title="Link to Code">💻 Code</a>
+                        <a href="#" class="link-btn">Details</a>
+                        <a href="#" class="link-btn">Code</a>
                     </div>
                 </div>
+            </div>
+
+            <div class="view-all">
+                <a href="pages/projects.html" class="btn btn--primary">View All Projects →</a>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience">
+    <!-- Call to Action -->
+    <section class="cta-section">
         <div class="container">
-            <h2>Experience</h2>
-            
-            <h3 style="margin-top: var(--space-32); margin-bottom: var(--space-24); font-size: 22px; color: var(--color-slate-900);">Academic & Industry Experience</h3>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3>Lecturer in Computer Science</h3>
-                    <div class="role">Keele University</div>
-                    <div class="period">April 2020 - Present</div>
-                    <p>Design and delivery of UG/PG modules in Data Science and Machine Learning. Successfully led R&D projects with SMEs including Lowe Riser Pod Ltd and Apnea Tech Ltd. Achieved FHEA recognition as Fellow of Higher Education Academy (2022). Managed ERDF-funded Healthcare and MedTech projects (2022-2023).</p>
-                </div>
-
-                <div class="timeline-item">
-                    <h3>Academic Advisor</h3>
-                    <div class="role">Apnea Tech Ltd (Cambridge)</div>
-                    <div class="period">July 2022 - July 2023</div>
-                    <p>Led development of deep learning and visual analytics frameworks for healthcare technology. Contributed to Breaking the Mould Award 2023 in Health & Wellbeing category as part of innovative tech team.</p>
-                </div>
-
-                <div class="timeline-item">
-                    <h3>Academic Advisor</h3>
-                    <div class="role">Lowe Riser Pod Ltd (Staffordshire)</div>
-                    <div class="period">March 2022 - June 2022</div>
-                    <p>Advised on deep learning methodologies and model development for engineering applications.</p>
-                </div>
-
-                <div class="timeline-item">
-                    <h3>Research Assistant</h3>
-                    <div class="role">University of Warwick</div>
-                    <div class="period">May 2019 - December 2019</div>
-                    <p>Investigated latent variable models in RNN architectures for sequential data. Studied joint modeling of text sequences and visual representations.</p>
-                </div>
-
-                <div class="timeline-item">
-                    <h3>Software Development Engineer</h3>
-                    <div class="role">Jasper Infotech (Snapdeal)</div>
-                    <div class="period">July 2015 - December 2015</div>
-                    <p>Backend development using Java Spring framework for e-commerce platform.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education">
-        <div class="container">
-            <h2>Education</h2>
-            <div class="education-grid">
-                <div class="education-card">
-                    <div class="degree">Doctor of Philosophy (PhD)</div>
-                    <div class="institution">University of Warwick</div>
-                    <div class="period">January 2016 - December 2019</div>
-                    <div class="details">
-                        <strong>Thesis:</strong> Neural Models for Stepwise Text Illustration
-                    </div>
-                    <div class="details">
-                        <strong>Research Areas:</strong> Natural Language Processing, Machine Learning, Deep Learning
-                    </div>
-                    <div class="details">
-                        <strong>Advisor:</strong> Prof Yulan He
-                    </div>
-                    <div class="highlights">
-                        ✓ Fully-funded PhD Scholarship from Department of Computer Science<br>
-                        ✓ Conducted cutting-edge research in NLP and sequence-to-sequence models<br>
-                        ✓ Published multiple papers in top-tier conferences (LREC, ECIR)
-                    </div>
-                </div>
-
-                <div class="education-card">
-                    <div class="degree">Bachelor of Technology (BTech)</div>
-                    <div class="institution">Indian Institute of Technology (IIT) Ropar</div>
-                    <div class="period">August 2011 - May 2015</div>
-                    <div class="details">
-                        <strong>Field:</strong> Computer Science and Engineering
-                    </div>
-                    <div class="details">
-                        <strong>CGPA:</strong> 7.35 / 10.0
-                    </div>
-                    <div class="details">
-                        <strong>Final Project:</strong> EBC Detection by Classifying Mammograms using SVM
-                    </div>
-                    <div class="highlights">
-                        ✓ Top 0.1% in AIEEE2011 exam (Rank 3,078 out of 1.12M)<br>
-                        ✓ Top 0.1% in IITJEE2011 exam (Rank 3,782 out of 550K)<br>
-                        ✓ Strong foundation in algorithms, ML, and software development
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2>Skills & Expertise</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Machine Learning & AI</h3>
-                    <ul class="skill-list">
-                        <li>Deep Learning & Neural Networks</li>
-                        <li>Natural Language Processing (NLP)</li>
-                        <li>Transformers & Attention Mechanisms</li>
-                        <li>Computer Vision & Image Processing</li>
-                        <li>Sequence-to-Sequence Models</li>
-                        <li>Recurrent Neural Networks (RNN/LSTM)</li>
-                        <li>Probabilistic Models (VAE, LDA)</li>
-                        <li>Multimodal Learning</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Programming & Tools</h3>
-                    <ul class="skill-list">
-                        <li>Python (Primary)</li>
-                        <li>PyTorch & Keras</li>
-                        <li>TensorFlow</li>
-                        <li>Django & Flask</li>
-                        <li>SQL & NoSQL Databases</li>
-                        <li>Git & GitHub</li>
-                        <li>AWS (EC2, S3, Lambda)</li>
-                        <li>Linux/Ubuntu & Shell</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Research & Academic</h3>
-                    <ul class="skill-list">
-                        <li>Research Paper Writing</li>
-                        <li>Academic Publishing</li>
-                        <li>Machine Learning Research</li>
-                        <li>Data Analysis & Statistics</li>
-                        <li>Scientific Communication</li>
-                        <li>Curriculum Design</li>
-                        <li>Peer Review (IEEE, ACL, AAAI)</li>
-                        <li>Conference Presentations</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Specialized Domains</h3>
-                    <ul class="skill-list">
-                        <li>Medical Text Mining</li>
-                        <li>Healthcare AI Applications</li>
-                        <li>Sentiment Analysis</li>
-                        <li>Information Retrieval</li>
-                        <li>Social Network Analysis</li>
-                        <li>Document Classification</li>
-                        <li>Text Visualization</li>
-                        <li>Fake News Detection</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Articles Section -->
-    <section id="articles">
-        <div class="container">
-            <h2>Articles</h2>
-            <p style="color: var(--color-text-secondary); margin-bottom: var(--space-24); font-size: 16px; line-height: 1.8;">
-                I share in-depth insights on machine learning, natural language processing, and AI engineering. 
-                These articles feature code examples, practical applications, and research findings from my work 
-                in academia and industry.
-            </p>
-            <div class="articles-placeholder">
-                <div class="icon">✍️</div>
-                <p style="margin-bottom: var(--space-16);">
-                    <strong>Featured Topics:</strong>
-                </p>
-                <p style="text-align: left; max-width: 600px; margin: 0 auto; color: var(--color-text-secondary);">
-                    • Advanced Transformer Architectures & Fine-tuning<br>
-                    • Multimodal Learning: Combining Vision and Language<br>
-                    • Production ML: Deploying Models with Django & PyTorch<br>
-                    • NLP for Healthcare: Text Mining Medical Records<br>
-                    • Deep Learning for Sequence-to-Sequence Tasks<br>
-                    • Attention Mechanisms in Neural Networks<br>
-                </p>
-                <p style="margin-top: var(--space-24); color: var(--color-text-secondary);">
-                    <strong>New articles coming soon!</strong> Check back regularly for fresh content, code tutorials, and research insights.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2>Get in Touch</h2>
-            <div class="contact-info">
-                <div class="contact-card">
-                    <div class="label">Email</div>
-                    <a href="mailto:vishwash.iitrpr@gmail.com">vishwash.iitrpr@gmail.com</a>
-                </div>
-                <div class="contact-card">
-                    <div class="label">Phone</div>
-                    <p>(+44) 74593-25544</p>
-                </div>
-                <div class="contact-card">
-                    <div class="label">GitHub</div>
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer">github.com/vishwash</a>
-                </div>
-                <div class="contact-card">
-                    <div class="label">LinkedIn</div>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">linkedin.com/in/vishwash</a>
-                </div>
-            </div>
+            <h2>Ready to Collaborate?</h2>
+            <p>I'm actively exploring ML engineering and NLP specialist opportunities. Let's discuss your project or opportunity.</p>
+            <a href="pages/contact.html" class="btn btn--primary btn--lg">Start a Conversation</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Vishwash Batra. Lecturer in Computer Science | Machine Learning Engineer | NLP Specialist</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Vishwash Batra</h4>
+                    <p>Lecturer in Computer Science<br>Keele University, UK</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pages/projects.html">Projects</a></li>
+                        <li><a href="pages/experience.html">Experience</a></li>
+                        <li><a href="pages/articles.html">Articles</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="mailto:vishwash.iitrpr@gmail.com">Email</a></li>
+                        <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                        <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vishwash Batra. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <script>
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href !== '#') {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                    }
-                }
-            });
-        });
-
-        // Add active state to nav links
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('nav a');
-
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.style.color = '';
-                if (link.getAttribute('href').slice(1) === current) {
-                    link.style.color = 'var(--color-primary)';
-                }
-            });
-        });
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
